@@ -6,6 +6,17 @@ cursor.execute('CREATE TABLE IF NOT EXISTS medicine (id INT, name TEXT, date INT
 cursor.execute('''INSERT INTO medicine (id, name, date, value)VALUES (0, 'KUPEN', 2021, 55500)''')
 cursor.execute('''INSERT INTO medicine (id, name, date, value)VALUES (1, 'Vazelin', 2030, 9500)''')
 cursor.execute('''INSERT INTO medicine (id, name, date, value)VALUES (2, 'FANIGAN', 5040, 7000000)''')
+cursor.execute('''SELECT * FROM medicine''')
 
 
+answer = input("Dorini so`rang:")
+
+
+cursor.execute('''SELECT * FROM medicine WHERE (name == (?))''', [answer])
+ssss = cursor.fetchall()
+
+
+print(ssss)
+
+conn.commit()
 
